@@ -766,7 +766,7 @@ def library():
         raw_input("Elder Wizard: My word! What happened here! Broken into the spell room and a defeated body? Both those are off limits!")
         elder_wizard()
     elif spell == "La Grezz Maginka Lessar":
-        spell_list.append("Magic Lazer")
+        spell_list.append("Magic Laser")
         raw_input("Elder Wizard: Who's in here? I heard noi- OOF!")
         raw_input("You hit the Elder Wizard with a Lightning Bolt!")
         raw_input("Samantha: What the heck did you just do?!")
