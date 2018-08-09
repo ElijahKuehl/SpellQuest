@@ -196,7 +196,7 @@ def chapter_one():
     while yorn.lower() not in ["yes", "y"]:
         object1 = raw_input(colored('Elder Wizard:', 'magenta') + " What will your first object be?\n")
         print colored('Elder Wizard:', 'magenta') + " So you want a " + object1 + " to be Enchanted?"
-        yorn = raw_input("Yes(Y) or No(N)")
+        yorn = raw_input("(Y)es or (N)o")
     raw_input(colored('Elder Wizard:', 'magenta') + " Then let it be done! Watch closely now.")
     raw_input(colored('Elder Wizard:', 'magenta') + " First, draw a chalk circle around the Object you want to Enchant. It does not need to be perfect.")
     raw_input(colored('Elder Wizard:', 'magenta') + " Then we will find the Book for a Spell you want to Enchant the Object with.")
@@ -224,7 +224,7 @@ def first_encounter():
     # V This code makes the battle go unscripted, and you will lose. The other code is made so that you get saved.
     # ent = enemy("The Raged Ent", 25, "None", "Green", ["Raged Claws"])
 
-    raw_input("\n\tENCOUNTER: colored('Raged Ent', 'green')\n")
+    raw_input("\n\tENCOUNTER: " + colored('Raged Ent', 'green') + "\n")
     ent = 15
 
     while True:
@@ -329,7 +329,7 @@ def get_guild():
     raw_input("\n" + colored('Yellow Guild', 'yellow') + ", proficient in " + colored('Yellow Magic', 'yellow') + ". Unlocks the spell Lightning.\n")
 
     raw_input(colored('Noah:','red') + " Now before you choose a guild, you should know what color spells are stronger against what. Here's a chart:")
-    print "\n     " + colored('Green', 'green')
+    print "\n    " + colored('Green', 'green')
     print "    v    ^ "
     print " " + colored('Blue', 'blue') + "    " + colored('Red', 'red')
     print "    v    ^ "
@@ -1167,4 +1167,5 @@ if __name__ == '__main__':
     print "On the Bad Path? ", badPath
     print "People you hang out with:", crew
     print "Spells:", str(spell_list)
-    print "Guild:", guild, "Level:", level, "HP:", maxHp
+    print "Guild: " + guild + ". Level: " + str(level) + ". HP: " + str(maxHp)
+    
