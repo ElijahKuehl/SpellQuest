@@ -711,7 +711,7 @@ def elder_wizard():
     raw_input(colored('Elder Wizard:', 'magenta') + " Like a Hacker.")
     raw_input("Elder Wizard leveled up! HP +1!")
     raw_input("Elder Wizard regenerated to full health!")
-    Enemy(colored('Raged Elder Wizard', 'magenta'), 1000001, "None", "Gold", ["Firewall", "Full Regenerate"])
+    Enemy(colored('Raged Elder Wizard', 'magenta'), maxHp+1, "None", "Gold", ["Firewall", "Full Regenerate"])
     raw_input(colored('Elder Wizard:', 'magenta') + " Ngh...")
     raw_input("lder Wizard: you've...")
     raw_input("der Wizard: defeated me.")
