@@ -609,7 +609,7 @@ def chapter_two():
                 raw_input("Level up! Max Hp +1")
                 level += 1
                 maxHp += 1
-                # TODO: Ending here. Later, just mess around doing gimicky stuff.
+                # TODO: Ending here. Later, just mess around doing gimmicky stuff.
     if badPath:
         spark_init()
         if not badPath:
@@ -656,8 +656,8 @@ def chapter_two():
                             raw_input("Noah blasted a fireball into your face! It wasn't very effective, but it still hurt.")
                             raw_input(colored('Thomson:','green') + " Get outta here kid!")
                         else:
-                            raw_input(colored('Noah:','red') + " You don't have anything to say?")
-                            raw_input(colored('Thomson:','green') + " Get outta here kid!")
+                            raw_input(colored('Noah:','red') + " Don't you have anything to say?")
+                            raw_input(colored('Thomson:','green') + " Ah, get outta here kid!")
                     break
                     # TODO: Ending Here. Later, do stuff with Noah and Thompson
                 elif lonely == "2":
@@ -854,6 +854,37 @@ def library():
         raw_input(colored('Elder Wizard:', 'magenta') + " Just don't get any ideas! Go ahead and get out of here you rascals.")
 
 
+def who(person, text):
+    if person == "Noah":
+        if Noah:
+            speaker = colored('Noah: ','red')
+        elif Samantha:
+            speaker = colored('Samantha:','yellow')
+        else:
+            speaker = "Nobody"
+    elif person == "Samantha":
+        if Samantha:
+            speaker = colored('Samantha: ','yellow')
+        elif Noah:
+            speaker = colored('Noah: ','red')
+        else:
+            speaker = "Nobody"
+    else:
+        speaker = "Nobody"
+        print "You made a typo, dummy!"
+
+    if speaker != "Nobody":
+        raw_input(speaker + text)
+
+def fightTheSparks():
+    who("Noah", "We have to defeat " + colored('The Sparks', 'yellow') + "'s leader, Ethan, and I think that new spell may be able to do it for us.")
+    who("Samantha", "Ethan is pretty strong, I wish you the best of luck.")
+    who("Noah", "We need to set up a professional duel, so lets find the Elder Wizard.")
+    raw_input(colored('Elder Wizard:', 'magenta') + "I hear your cry, and I arrive! What can I do for you?")
+    who("Samantha", "We wanna set up a duel against Ethan, Leader of " + colored('The Sparks.', 'yellow'))
+    raw_input(colored('Elder Wizard:', 'magenta') + "A Duel of the ages, and one you are bound to lose. It is set up! at 12:00 Tomorrow!")
+    who("Noah", "Alright! We'll be there! Let's prep!")
+
 def mountain():
     global spell_list, level, maxHp, object1, guild
     path = 0
@@ -1038,7 +1069,7 @@ def checkpoint():
     print "0)Quit"
     print "1)Chapter One 2)First fight 3)Choose your Guild 4)Learn your next spell 5)First encounter with the Sparks"
     print "6)Chapter Two 7)Enter the Library 8)Enter the Ent Forest 9)Climb the Mountain 10)Fight the Elder Wizard"
-    print "5 is reccomended if you want to skip setup."
+    print "5 is recommended if you want to skip setup."
     choice = input("")
     while True:
         if choice == 0:
@@ -1088,7 +1119,6 @@ def checkpoint():
 
 
 def questions(nameNeed, objectNeed, spellsNeed, guildNeed, crewNeed, peopleNeed, levelNeed, pathNeed):
-    # TODO: People aren't going to be perfect, make a menu for some options.
     global name, scrambled_name, object1, spell_list, guild, crew, Noah, Samantha, level, maxHp, badPath, guild_spell
     name = ""
     object1 = ""
@@ -1096,7 +1126,7 @@ def questions(nameNeed, objectNeed, spellsNeed, guildNeed, crewNeed, peopleNeed,
     guild = ""
     crew = []
     Noah = True
-    Samantha = True
+    Samantha = False
     level = 1
     maxHp = 10
     badPath = False
@@ -1108,7 +1138,12 @@ def questions(nameNeed, objectNeed, spellsNeed, guildNeed, crewNeed, peopleNeed,
     if spellsNeed:
         while True:
             allSpells = ["Finished", "Magic Beam", "Freeze", "Fireball", "Lightning", "Heal", "Invisibility", "Raged Claws", "Sparks", "Magic Laser", "Smite", "Firewall", "Full Regenerate", "Frost Bite", "Bite", "Snowball"]
-            spell = input("\nWhat Spells did you have? Please type one slot number. " + str(spell_list) + "\n     0             1           2          3           4         5           6               7            8           9           10        11             12               13         14        15 \n" + str(allSpells) + "\n")
+            print "\nWhat Spells did you have? Please type one slot number. " + str(spell_list)
+            print "   0             1           2          3           4         5           6     "
+            print "Finished", "Magic Beam", "Freeze", "Fireball", "Lightning", "Heal", "Magic Laser"
+            print "     7               8           9          10        11             12               13         14        15   "
+            print "Invisibility", "Raged Claws", "Sparks",  "Smite", "Firewall", "Full Regenerate", "Frost Bite", "Bite", "Snowball"
+            spell = input("\n")
             if spell != 0:
                 spell_list.append(allSpells[spell])
             else:
@@ -1168,4 +1203,3 @@ if __name__ == '__main__':
     print "People you hang out with:", crew
     print "Spells:", str(spell_list)
     print "Guild: " + guild + ". Level: " + str(level) + ". HP: " + str(maxHp)
-    
